@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Baaelith Games - An indie game studio building dark universes. First title : Bloody Moon : First Fear.">
+<meta property="og:title" content="Baaelith Games">
+<meta property="og:description" content="An indie game studio building dark universes.">
+<title>Baaelith Games</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#07060A;--blood:#8B0000;--blood-bright:#C0392B;--gold:#C9A84C;--gold-dim:rgba(201,168,76,0.4);--paper:#F0E6D0;--paper-dim:rgba(240,230,208,0.6);--paper-ghost:rgba(240,230,208,0.15);--mist:rgba(240,230,208,0.35);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--paper);font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;cursor:crosshair;}
+a,button{cursor:pointer;}
+.lang-bar{position:fixed;top:0;right:0;z-index:200;display:flex;align-items:center;padding:1rem 1.5rem;gap:4px;}
+.lang-btn{background:none;border:none;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.2em;color:var(--mist);padding:4px 8px;transition:color 0.2s;text-transform:uppercase;}
+.lang-btn.active{color:var(--gold);}
+.lang-sep{color:var(--mist);font-size:10px;opacity:0.4;}
+.particles{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none;}
+.particle{position:absolute;width:1px;height:1px;background:var(--gold);border-radius:50%;animation:drift linear infinite;opacity:0;}
+@keyframes drift{0%{transform:translateY(100vh);opacity:0;}10%{opacity:0.5;}90%{opacity:0.2;}100%{transform:translateY(-10vh) translateX(20px);opacity:0;}}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:5rem 2rem 4rem;text-align:center;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,transparent 30%,rgba(7,6,10,0.8) 100%),radial-gradient(ellipse 100% 50% at 50% 0%,rgba(139,0,0,0.12) 0%,transparent 60%);pointer-events:none;z-index:1;}
+.hero-content{position:relative;z-index:2;max-width:800px;}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.hero-eyebrow{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.5em;color:var(--gold);text-transform:uppercase;margin-bottom:2rem;opacity:0;animation:fadeDown 1s ease 0.3s forwards;}
+.hero-logo{font-family:'Cinzel',serif;font-size:clamp(2.5rem,8vw,5.5rem);font-weight:900;letter-spacing:0.15em;color:var(--paper);line-height:1;margin-bottom:0.5rem;text-shadow:0 0 80px rgba(139,0,0,0.3);opacity:0;animation:fadeUp 1.2s ease 0.5s forwards;}
+.hero-logo span{color:var(--blood-bright);}
+.hero-rule{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:3rem;opacity:0;animation:fadeUp 1s ease 0.8s forwards;}
+.hero-rule::before,.hero-rule::after{content:'';width:40px;height:1px;background:var(--gold-dim);}
+.hero-tagline{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.3em;color:var(--mist);text-transform:uppercase;}
+.hero-desc{font-size:clamp(1.1rem,2.5vw,1.4rem);font-style:italic;font-weight:300;color:var(--paper-dim);line-height:1.8;max-width:560px;margin:0 auto 3.5rem;opacity:0;animation:fadeUp 1s ease 1s forwards;}
+.hero-cta{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 1s ease 1.2s forwards;}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s ease 2s forwards;}
+.hero-scroll span{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:0.3em;color:var(--mist);text-transform:uppercase;}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold-dim),transparent);animation:scrollPulse 2s ease-in-out infinite;}
+@keyframes scrollPulse{0%,100%{opacity:0.4;}50%{opacity:1;}}
+.btn-primary{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--paper);background:var(--blood);border:1px solid var(--blood-bright);padding:14px 32px;text-decoration:none;transition:background 0.3s;display:inline-block;}
+.btn-primary:hover{background:var(--blood-bright);}
+.btn-secondary{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--paper-dim);background:transparent;border:1px solid rgba(240,230,208,0.2);padding:14px 32px;text-decoration:none;transition:all 0.3s;display:inline-block;}
+.btn-secondary:hover{border-color:var(--gold-dim);color:var(--gold);}
+.btn-small{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--paper-dim);background:transparent;border:1px solid rgba(240,230,208,0.2);padding:10px 20px;text-decoration:none;transition:all 0.3s;display:inline-block;}
+.btn-small:hover{border-color:var(--gold-dim);color:var(--gold);}
+.btn-small.red{background:var(--blood);border-color:var(--blood-bright);color:var(--paper);}
+.btn-small.red:hover{background:var(--blood-bright);}
+.inv-banner{background:rgba(139,0,0,0.08);border-top:1px solid rgba(139,0,0,0.2);border-bottom:1px solid rgba(139,0,0,0.2);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;position:relative;z-index:2;}
+.inv-banner p{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.2em;color:var(--paper-dim);text-transform:uppercase;}
+.inv-banner a{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.2em;color:var(--blood-bright);text-decoration:none;text-transform:uppercase;border-bottom:1px solid rgba(192,57,43,0.3);}
+.inv-banner a:hover{border-color:var(--blood-bright);}
+.section-label{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.4em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:1rem;}
+.section-label::after{content:'';width:60px;height:1px;background:var(--gold-dim);}
+.section-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;color:var(--paper);line-height:1.2;margin-bottom:3rem;}
+.games-section{max-width:1100px;margin:0 auto;padding:7rem 2rem 6rem;position:relative;z-index:2;}
+.games-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.game-card{border:1px solid rgba(240,230,208,0.08);background:rgba(240,230,208,0.02);padding:2.5rem;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:border-color 0.3s;}
+.game-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blood);opacity:0.6;}
+.game-card:hover{border-color:rgba(201,168,76,0.25);}
+.card-kicker{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.3em;color:var(--blood-bright);text-transform:uppercase;margin-bottom:1rem;}
+.card-name{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,1.9rem);font-weight:900;color:var(--paper);line-height:1.2;margin-bottom:0.5rem;}
+.card-sub{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:1.5rem;}
+.card-desc{font-size:1.05rem;font-weight:300;color:var(--paper-dim);line-height:1.8;margin-bottom:2rem;flex:1;}
+.card-links{display:flex;gap:0.75rem;flex-wrap:wrap;}
+.teaser-card{grid-column:1/-1;border:1px dashed rgba(192,57,43,0.3);background:rgba(139,0,0,0.04);padding:3rem 2.5rem;text-align:center;position:relative;overflow:hidden;transition:border-color 0.3s;}
+.teaser-card:hover{border-color:rgba(192,57,43,0.6);}
+.teaser-kicker{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.4em;color:var(--blood-bright);text-transform:uppercase;margin-bottom:1.25rem;animation:blink 3s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.teaser-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:900;color:var(--paper);letter-spacing:0.08em;margin-bottom:1rem;}
+.teaser-title span{color:var(--blood-bright);}
+.teaser-desc{font-size:1.05rem;font-style:italic;font-weight:300;color:var(--mist);line-height:1.8;max-width:520px;margin:0 auto;}
+.studio-section{max-width:1100px;margin:0 auto;padding:6rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;position:relative;z-index:2;}
+.studio-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;color:var(--paper);line-height:1.2;margin-bottom:1.5rem;}
+.studio-text{font-size:1.1rem;font-weight:300;line-height:1.9;color:var(--paper-dim);margin-bottom:1.25rem;}
+.studio-manifesto{border-left:2px solid var(--blood);padding:1rem 1.5rem;background:rgba(139,0,0,0.05);margin-top:2rem;}
+.studio-manifesto p{font-size:1.05rem;font-style:italic;color:var(--paper-dim);line-height:1.8;}
+.studio-facts{display:flex;flex-direction:column;gap:1.5rem;padding-top:1rem;}
+.fact-item{padding-bottom:1.5rem;border-bottom:1px solid rgba(240,230,208,0.06);}
+.fact-item:last-child{border-bottom:none;}
+.fact-num{font-family:'Cinzel',serif;font-size:2.5rem;font-weight:900;color:var(--blood-bright);line-height:1;margin-bottom:0.25rem;}
+.fact-label{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.4rem;}
+.fact-desc{font-size:0.95rem;color:var(--mist);font-style:italic;line-height:1.6;}
+.divider{border:none;border-top:1px solid rgba(240,230,208,0.06);max-width:1100px;margin:0 auto;}
+.social-section{padding:5rem 2rem 6rem;max-width:1100px;margin:0 auto;text-align:center;position:relative;z-index:2;}
+.social-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:600;color:var(--paper);margin-bottom:0.75rem;}
+.social-sub{font-size:1rem;font-style:italic;color:var(--mist);margin-bottom:3rem;}
+.social-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;}
+.social-link{display:flex;flex-direction:column;align-items:center;gap:0.75rem;text-decoration:none;padding:1.75rem 2rem;border:1px solid rgba(240,230,208,0.08);background:rgba(240,230,208,0.02);min-width:150px;transition:all 0.3s;position:relative;overflow:hidden;}
+.social-link::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blood);transform:scaleX(0);transition:transform 0.3s;}
+.social-link:hover{border-color:rgba(240,230,208,0.15);}
+.social-link:hover::before{transform:scaleX(1);}
+.social-icon{font-size:1.5rem;display:block;}
+.social-name{font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.2em;color:var(--paper-dim);text-transform:uppercase;}
+.social-handle{font-family:'Courier Prime',monospace;font-size:10px;color:var(--mist);letter-spacing:0.05em;}
+footer{border-top:1px solid rgba(240,230,208,0.06);padding:2.5rem 2rem;text-align:center;position:relative;z-index:2;}
+footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:1px;background:linear-gradient(to right,transparent,var(--blood-bright),transparent);opacity:0.4;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;letter-spacing:0.3em;color:var(--paper-ghost);margin-bottom:0.5rem;}
+.footer-blood{display:block;color:var(--blood);margin:0.75rem auto;font-size:1rem;opacity:0.5;}
+.footer-copy{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:0.2em;color:rgba(240,230,208,0.15);text-transform:uppercase;margin-bottom:0.75rem;}
+.footer-email a{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.2em;color:rgba(240,230,208,0.25);text-decoration:none;text-transform:uppercase;border-bottom:1px solid rgba(240,230,208,0.1);transition:color 0.2s;}
+.footer-email a:hover{color:var(--gold);}
+@media(max-width:768px){.games-grid{grid-template-columns:1fr;}.studio-section{grid-template-columns:1fr;gap:3rem;}}
+@media(max-width:480px){.hero-cta{flex-direction:column;align-items:center;}.btn-primary,.btn-secondary{width:100%;text-align:center;}}
+</style>
+</head>
+<body>
+<div class="lang-bar">
+  <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+  <span class="lang-sep">|</span>
+  <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
+</div>
+<div class="particles" id="particles"></div>
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow" id="t-eyebrow"></p>
+    <h1 class="hero-logo">BAAE<span>LI</span>TH<br>GAMES</h1>
+    <div class="hero-rule"><span class="hero-tagline" id="t-tagline"></span></div>
+    <p class="hero-desc" id="t-desc"></p>
+    <div class="hero-cta">
+      <a href="#games" class="btn-primary" id="t-cta1"></a>
+      <a href="#studio" class="btn-secondary" id="t-cta2"></a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span id="t-scroll"></span></div>
+</section>
+<div class="inv-banner">
+  <p id="t-banner-text"></p>
+  <a href="https://baaelithgames.github.io/the-true" target="_blank" id="t-banner-link"></a>
+</div>
+<div id="games">
+  <div class="games-section">
+    <p class="section-label" id="t-games-label"></p>
+    <h2 class="section-title" id="t-games-title"></h2>
+    <div class="games-grid">
+      <div class="game-card">
+        <p class="card-kicker" id="t-g1-kicker"></p>
+        <p class="card-name">Bloody Moon :<br>First Fear</p>
+        <p class="card-sub" id="t-g1-sub"></p>
+        <p class="card-desc" id="t-g1-desc"></p>
+        <div class="card-links">
+          <a href="https://baaelithgames.github.io" target="_blank" class="btn-small red" id="t-g1-site"></a>
+          <a href="https://store.steampowered.com/app/4516770/Bloody_Moon__First_Fear/" target="_blank" class="btn-small">Steam</a>
+          <a href="https://www.kickstarter.com/projects/baaelithgames/bloody-moon-first-fear-pure-and-uncompromising-horror" target="_blank" class="btn-small">Kickstarter</a>
+        </div>
+      </div>
+      <div class="game-card">
+        <p class="card-kicker" id="t-g2-kicker"></p>
+        <p class="card-name">The True</p>
+        <p class="card-sub" id="t-g2-sub"></p>
+        <p class="card-desc" id="t-g2-desc"></p>
+        <div class="card-links">
+          <a href="https://baaelithgames.github.io/the-true" target="_blank" class="btn-small red" id="t-g2-site"></a>
+        </div>
+      </div>
+      <div class="teaser-card">
+        <p class="teaser-kicker" id="t-g3-kicker"></p>
+        <p class="teaser-title" id="t-g3-title"></p>
+        <p class="teaser-desc" id="t-g3-desc"></p>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="divider">
+<div id="studio">
+  <div class="studio-section">
+    <div>
+      <p class="section-label" id="t-studio-label"></p>
+      <h2 class="studio-title" id="t-studio-title"></h2>
+      <p class="studio-text" id="t-studio-text1"></p>
+      <p class="studio-text" id="t-studio-text2"></p>
+      <div class="studio-manifesto"><p id="t-manifesto"></p></div>
+    </div>
+    <div class="studio-facts">
+      <div class="fact-item">
+        <p class="fact-num">I</p>
+        <p class="fact-label" id="t-fact1-label"></p>
+        <p class="fact-desc" id="t-fact1-desc"></p>
+      </div>
+      <div class="fact-item">
+        <p class="fact-num">XVI</p>
+        <p class="fact-label" id="t-fact2-label"></p>
+        <p class="fact-desc" id="t-fact2-desc"></p>
+      </div>
+      <div class="fact-item">
+        <p class="fact-num">&#8734;</p>
+        <p class="fact-label" id="t-fact3-label"></p>
+        <p class="fact-desc" id="t-fact3-desc"></p>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="divider">
+<div class="social-section">
+  <p class="section-label" style="justify-content:center;" id="t-social-label"></p>
+  <h2 class="social-title" id="t-social-title"></h2>
+  <p class="social-sub" id="t-social-sub"></p>
+  <div class="social-links">
+    <a href="https://baaelithgames.github.io" target="_blank" class="social-link">
+      <span class="social-icon">&#127769;</span>
+      <span class="social-name">First Fear</span>
+      <span class="social-handle" id="t-social-ff"></span>
+    </a>
+    <a href="https://baaelithgames.github.io/the-true" target="_blank" class="social-link">
+      <span class="social-icon">&#129405;</span>
+      <span class="social-name">The True</span>
+      <span class="social-handle" id="t-social-thetrue"></span>
+    </a>
+    <a href="https://store.steampowered.com/app/4516770/Bloody_Moon__First_Fear/" target="_blank" class="social-link">
+      <span class="social-icon">&#127918;</span>
+      <span class="social-name">Steam</span>
+      <span class="social-handle" id="t-social-steam"></span>
+    </a>
+    <a href="https://www.kickstarter.com/projects/baaelithgames/bloody-moon-first-fear-pure-and-uncompromising-horror" target="_blank" class="social-link">
+      <span class="social-icon">&#9672;</span>
+      <span class="social-name">Kickstarter</span>
+      <span class="social-handle" id="t-social-ks"></span>
+    </a>
+    <a href="https://x.com/BaaelithGames" target="_blank" class="social-link">
+      <span class="social-icon">&#120143;</span>
+      <span class="social-name">X</span>
+      <span class="social-handle">@BaaelithGames</span>
+    </a>
+    <a href="mailto:contact@baaelithgames.com" class="social-link">
+      <span class="social-icon">&#9993;</span>
+      <span class="social-name">Contact</span>
+      <span class="social-handle">contact@baaelithgames.com</span>
+    </a>
+  </div>
+</div>
+<footer>
+  <p class="footer-logo">BAAELITH GAMES</p>
+  <span class="footer-blood">&#129405;</span>
+  <p class="footer-copy" id="t-footer-copy"></p>
+  <div class="footer-email">
+    <a href="mailto:contact@baaelithgames.com">contact@baaelithgames.com</a>
+  </div>
+</footer>
+<script>
+var T = {
+  en: {
+    eyebrow: 'An Indie Game Studio',
+    tagline: 'Building Dark Universes',
+    desc: 'We found something buried in French history. We made a game about it. Some people would prefer we had not.',
+    cta1: 'Our Games',
+    cta2: 'About the Studio',
+    scroll: 'Scroll',
+    'banner-text': 'An investigation is currently underway. Next Blood Moon : December 31, 2028.',
+    'banner-link': 'Read the full report',
+    'games-label': 'Our Universe',
+    'games-title': 'One saga. Two doors in.',
+    'g1-kicker': 'First Title - In Development',
+    'g1-sub': 'Survival Horror - Unreal Engine 5',
+    'g1-desc': 'Pure and uncompromising horror beneath the south of France. No weapons, no HUD, no reading : the dark is your only ally. Demo at Steam Next Fest, October 2026.',
+    'g1-site': 'Official Site',
+    'g2-kicker': 'The Investigation - Ongoing',
+    'g2-sub': 'Investigation Journal',
+    'g2-desc': 'The journal that documents what we found while making the game. Real places, real archives, and a few things we still cannot explain. Read at your own risk and peril.',
+    'g2-site': 'Read the Journal',
+    'g3-kicker': 'Next Chapter - Classified',
+    'g3-title': 'The story continues in 2028.',
+    'g3-desc': 'What began beneath Provence does not end there. You will know more when the Blood Moon rises.',
+    'studio-label': 'The Studio',
+    'studio-title': 'Two people. One obsession. Dark stories worth telling.',
+    'studio-text1': 'Baaelith Games was born from a simple conviction : French history is full of shadows that no one has yet turned into games. Conspiracies, forgotten peoples, buried secrets, all of it is there, waiting.',
+    'studio-text2': 'We are not trying to make the biggest game. We are trying to make the most unsettling one.',
+    manifesto: 'The past is never dead. Every stone remembers the blood that was spilled. And sometimes, the blood remembers you.',
+    'fact1-label': 'First game in development',
+    'fact1-desc': 'Bloody Moon : First Fear, survival horror rooted in real French history and occult legend.',
+    'fact2-label': 'Centuries of lore to explore',
+    'fact2-desc': 'From Nostradamus and Catherine de Medicis to contemporary France. The order never stopped.',
+    'fact3-label': 'Unanswered questions',
+    'fact3-desc': 'Some of what we found, we cannot yet explain. That is why we build games instead of filing reports.',
+    'social-label': 'Find us everywhere',
+    'social-title': 'Stay inside the circle.',
+    'social-sub': 'The investigation continues on every channel. Do not miss what comes next.',
+    'social-ff': 'Official game site',
+    'social-thetrue': 'Investigation Journal',
+    'social-steam': 'Wishlist now',
+    'social-ks': 'Back the project',
+    'footer-copy': '2026 Baaelith Games - All rights reserved - Indie Studio'
+  },
+  fr: {
+    eyebrow: 'Un Studio de Jeux Indépendant',
+    tagline: 'Construire des Univers Sombres',
+    desc: 'Nous avons trouvé quelque chose d’enfoui dans l’histoire de France. Nous en avons fait un jeu. Certains auraient préféré que nous ne le fassions pas.',
+    cta1: 'Nos Jeux',
+    cta2: 'Le Studio',
+    scroll: 'Défiler',
+    'banner-text': 'Une enquête est actuellement en cours. Prochaine Lune de Sang : 31 décembre 2028.',
+    'banner-link': 'Lire le rapport complet',
+    'games-label': 'Notre Univers',
+    'games-title': 'Une saga. Deux portes d’entrée.',
+    'g1-kicker': 'Premier Titre - En Développement',
+    'g1-sub': 'Survival Horror - Unreal Engine 5',
+    'g1-desc': 'Une horreur pure et sans compromis sous le sud de la France. Sans arme, sans HUD, sans lecture : le noir est votre seul allié. Démo au Steam Next Fest, octobre 2026.',
+    'g1-site': 'Site Officiel',
+    'g2-kicker': 'L’Enquête - En Cours',
+    'g2-sub': 'Journal d’Enquête',
+    'g2-desc': 'Le journal qui documente ce que nous avons trouvé en créant le jeu. De vrais lieux, de vraies archives, et quelques choses que nous ne savons toujours pas expliquer. À lire à vos risques et périls.',
+    'g2-site': 'Lire le Journal',
+    'g3-kicker': 'Prochain Chapitre - Classifié',
+    'g3-title': 'L’histoire continue en 2028.',
+    'g3-desc': 'Ce qui a commencé sous la Provence ne s’arrête pas là. Vous en saurez plus quand la Lune de Sang se lèvera.',
+    'studio-label': 'Le Studio',
+    'studio-title': 'Deux personnes. Une obsession. Des histoires sombres qui méritent d’être racontées.',
+    'studio-text1': 'Baaelith Games est né d’une conviction simple : l’histoire de France est pleine d’ombres que personne n’a encore transformées en jeux. Conspirations, peuples oubliés, secrets enterrés, tout cela est là, qui attend.',
+    'studio-text2': 'Nous n’essayons pas de faire le jeu le plus grand. Nous essayons de faire le plus dérangeant.',
+    manifesto: 'Le passé n’est jamais mort. Chaque pierre se souvient du sang versé. Et parfois, le sang se souvient de vous.',
+    'fact1-label': 'Premier jeu en développement',
+    'fact1-desc': 'Bloody Moon : First Fear, survival horror ancré dans la vraie histoire de France et la légende occulte.',
+    'fact2-label': 'Des siècles de lore à explorer',
+    'fact2-desc': 'De Nostradamus et Catherine de Médicis à la France contemporaine. L’ordre ne s’est jamais arrêté.',
+    'fact3-label': 'Questions sans réponse',
+    'fact3-desc': 'Certaines de nos découvertes, nous ne pouvons pas encore les expliquer. C’est pourquoi nous créons des jeux.',
+    'social-label': 'Retrouvez-nous partout',
+    'social-title': 'Restez dans le cercle.',
+    'social-sub': 'L’enquête continue sur tous les canaux. Ne manquez pas ce qui vient ensuite.',
+    'social-ff': 'Site officiel du jeu',
+    'social-thetrue': 'Journal d’enquête',
+    'social-steam': 'Wishlist maintenant',
+    'social-ks': 'Soutenir le projet',
+    'footer-copy': '2026 Baaelith Games - Tous droits réservés - Studio Indépendant'
+  }
+};
+function setLang(l) {
+  var d = T[l];
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
+  document.documentElement.lang = l;
+  for (var key in d) {
+    var el = document.getElementById('t-' + key);
+    if (el) el.textContent = d[key];
+  }
+}
+var container = document.getElementById('particles');
+for (var i = 0; i < 25; i++) {
+  var p = document.createElement('div');
+  p.className = 'particle';
+  p.style.left = Math.random() * 100 + '%';
+  p.style.width = p.style.height = (Math.random() * 2 + 1) + 'px';
+  p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+  p.style.animationDelay = (Math.random() * 10) + 's';
+  container.appendChild(p);
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+setLang('en');
+</script>
+</body>
+</html>
