@@ -132,3 +132,7 @@ main,footer{position:relative;z-index:1}
   .cta{flex-direction:column}
   .btn{text-align:center}
 }
+
+/* récit Horror at the Vet : phrases courtes, rythme lent */
+.story p{margin-bottom:1rem}
+.story p:first-child{font-family:var(--title);font-size:1.3rem;color:var(--paper)}

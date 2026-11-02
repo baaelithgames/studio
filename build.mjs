@@ -288,10 +288,29 @@ const render = {
   </div>
 </section>
 <section class="section">
+  <p class="label">${h(p.storyLabel, lang)}</p>
+  <div class="prose story">
+    ${p.story.map((t) => `<p>${h(t, lang)}</p>`).join('\n    ')}
+  </div>
+  <blockquote class="manifesto">${h(p.signature, lang)}</blockquote>
+</section>
+<hr class="divider">
+<section class="section">
   <p class="label">${h(p.factsLabel, lang)}</p>
   ${facts(p.facts, lang)}
 </section>`;
-    const game = { '@context': 'https://schema.org', '@type': 'VideoGame', name: 'Horror at the Vet', url: abs(lang, '/games/horror-at-the-vet/'), author: org() };
+    const game = {
+      '@context': 'https://schema.org',
+      '@type': 'VideoGame',
+      name: 'Horror at the Vet',
+      url: abs(lang, '/games/horror-at-the-vet/'),
+      description: plain(p.lead, lang),
+      genre: ['Survival Horror', 'Horror'],
+      gamePlatform: 'PC',
+      playMode: 'SinglePlayer',
+      author: org(),
+      publisher: { '@id': cfg.siteUrl + '/#org' },
+    };
     return { title: p.title, description: p.description, body, jsonld: [game] };
   },
 
@@ -318,6 +337,15 @@ const render = {
   <p class="prose">${h(p.bmShort, lang)}</p>
   <h2 class="h3">${h(p.bmLongLabel, lang)}</h2>
   <p class="prose">${h(p.bmLong, lang)}</p>
+</section>
+<hr class="divider">
+<section class="section">
+  <p class="label">${h(p.vetLabel, lang)}</p>
+  ${facts(c.vet.facts, lang)}
+  <h2 class="h3">${h(p.bmShortLabel, lang)}</h2>
+  <p class="prose">${h(c.vet.lead, lang)}</p>
+  <h2 class="h3">${h(p.bmLongLabel, lang)}</h2>
+  <div class="prose">${[...c.vet.story, c.vet.signature].map((t) => `<p>${h(t, lang)}</p>`).join('')}</div>
 </section>
 <hr class="divider">
 <section class="section">
