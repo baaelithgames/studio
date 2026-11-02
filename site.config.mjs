@@ -1,7 +1,7 @@
 // Réglages globaux du site. Tout ce qui peut changer est ici.
 export default {
-  // Domaine final (à confirmer). Change cette ligne et relance le build.
-  siteUrl: 'https://baaelithstudio.com',
+  // Domaine du site. Change cette ligne et relance le build.
+  siteUrl: 'https://baaelithgames.com',
 
   brand: 'Baaelith Studio',
   legalName: 'Baaelith Studio Co., Ltd',
