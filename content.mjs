@@ -27,7 +27,7 @@ export default {
       gamesTitle: 'Dark stories, carved from real places.',
       bmKicker: 'First Title · In Development',
       bmSub: 'Survival Horror · Unreal Engine 5 · PC',
-      bmDesc: 'Pure and uncompromising horror beneath the south of France. No weapons, no HUD, no reading: the dark is your only ally. Playable demo at {demo}.',
+      bmDesc: 'Pure and uncompromising horror beneath the south of France. No weapons, no HUD, no reading: the dark is your only ally. Playable demo {demo}.',
       vetKicker: 'Next Title · Coming soon',
       vetSub: 'Survival Horror · PC',
       vetDesc: 'You are a chihuahua. Left overnight at a veterinary clinic, you wake up in a cage at the twelfth stroke of midnight, and the vet has come back for his patients. No hands, no weapons, no voice: only your nose, your ears and your small size to survive until morning.',
@@ -46,7 +46,7 @@ export default {
 
     bm: {
       title: 'Bloody Moon : First Fear | Survival Horror on PC',
-      description: 'Bloody Moon : First Fear, pure and uncompromising survival horror beneath the south of France. No weapons, no HUD. Demo at {demo}. Wishlist on Steam.',
+      description: 'Bloody Moon : First Fear, pure and uncompromising survival horror beneath the south of France. No weapons, no HUD. Demo {demo}. Wishlist on Steam.',
       eyebrow: 'A {brand} Production',
       tagline: 'Pure and Uncompromising Horror',
       lead: 'Declared unfit. Discarded among the dead. Beneath the south of France, something has been waiting for a thousand years. You wake up at the bottom of it.',
@@ -76,7 +76,7 @@ export default {
       ],
       tags: ['Survival Horror', 'Occult', 'Historical', 'Stealth', 'First Person', 'France'],
       factsLabel: 'Key facts',
-      facts: [['Platform', 'PC (Steam)'], ['Engine', 'Unreal Engine 5'], ['Demo', '{demo}'], ['Release', '{release}'], ['Languages', 'English, French']],
+      facts: [['Platform', 'PC (Steam)'], ['Engine', 'Unreal Engine 5'], ['Demo', 'Coming soon'], ['Release', '{release}'], ['Languages', 'English, French']],
     },
 
     vet: {
@@ -165,7 +165,7 @@ export default {
       gamesTitle: 'Des histoires sombres, taillées dans des lieux réels.',
       bmKicker: 'Premier titre · En développement',
       bmSub: 'Survival horror · Unreal Engine 5 · PC',
-      bmDesc: 'Une horreur pure et sans compromis sous le sud de la France. Sans arme, sans HUD, sans lecture : le noir est votre seul allié. Démo jouable au {demo}.',
+      bmDesc: 'Une horreur pure et sans compromis sous le sud de la France. Sans arme, sans HUD, sans lecture : le noir est votre seul allié. Démo jouable {demo}.',
       vetKicker: 'Prochain titre · Bientôt',
       vetSub: 'Survival horror · PC',
       vetDesc: 'Tu es un chihuahua. Déposé pour la nuit dans une clinique vétérinaire, tu te réveilles en cage au douzième coup de minuit, et le vétérinaire est revenu s’occuper de ses patients. Pas de mains, pas d’arme, pas de voix : juste ton flair, tes oreilles et ta petite taille pour survivre jusqu’au matin.',
@@ -184,7 +184,7 @@ export default {
 
     bm: {
       title: 'Bloody Moon : First Fear | Jeu d’horreur sur PC',
-      description: 'Bloody Moon : First Fear, survival horror pur et sans compromis sous le sud de la France. Sans arme, sans HUD. Démo au {demo}. Wishlist sur Steam.',
+      description: 'Bloody Moon : First Fear, survival horror pur et sans compromis sous le sud de la France. Sans arme, sans HUD. Démo {demo}. Wishlist sur Steam.',
       eyebrow: 'Une production {brand}',
       tagline: 'Une horreur pure et sans compromis',
       lead: 'Déclarée inapte. Jetée parmi les morts. Sous le sud de la France, quelque chose attend depuis mille ans. Vous vous réveillez tout au fond.',
@@ -214,7 +214,7 @@ export default {
       ],
       tags: ['Survival horror', 'Occulte', 'Historique', 'Infiltration', 'Vue subjective', 'France'],
       factsLabel: 'En bref',
-      facts: [['Plateforme', 'PC (Steam)'], ['Moteur', 'Unreal Engine 5'], ['Démo', '{demo}'], ['Sortie', '{release}'], ['Langues', 'Anglais, français']],
+      facts: [['Plateforme', 'PC (Steam)'], ['Moteur', 'Unreal Engine 5'], ['Démo', 'Bientôt'], ['Sortie', '{release}'], ['Langues', 'Anglais, français']],
     },
 
     vet: {

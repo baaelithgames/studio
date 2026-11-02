@@ -16,7 +16,7 @@ export default {
 
   bloodyMoon: {
     // Dates affichées partout (une seule source).
-    demo: { en: 'Steam Next Fest, October 2027', fr: 'Steam Next Fest, octobre 2027' },
+    demo: { en: 'coming soon', fr: 'bientôt' },
     release: { en: 'Q1 2028', fr: 'T1 2028' },
   },
 };
