@@ -20,6 +20,18 @@ const IMG = {
   og: '/assets/img/og-bloody-moon.jpg',
 };
 
+// Langue automatique : choix déjà fait par le visiteur, sinon langue du navigateur.
+// Placé dans le <head> pour rediriger avant l'affichage. Les robots (Google) ne sont jamais redirigés.
+const LANG_SCRIPT = `(function(){try{
+if(/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent))return;
+var cur=document.documentElement.lang,saved=null;
+try{saved=localStorage.getItem('lang')}catch(e){}
+var want=saved||(((navigator.languages&&navigator.languages[0])||navigator.language||'en').toLowerCase().indexOf('fr')===0?'fr':'en');
+if(want===cur)return;
+var alt=document.querySelector('link[rel=alternate][hreflang='+want+']');
+if(alt)location.replace(new URL(alt.href).pathname+location.search+location.hash);
+}catch(e){}})();`;
+
 // ---------- utilitaires ----------
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 function vars(lang) {
@@ -65,6 +77,7 @@ ${alternates}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="${esc(cfg.links.xHandle)}">
 <meta name="theme-color" content="#07060A">
+<script>${LANG_SCRIPT}</script>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -362,7 +375,9 @@ const nf = content.en.notFound;
 write('404.html', layout({
   lang: 'en', path: '/404', title: nf.title, description: nf.lead,
   body: `<section class="hero hero-short"><div class="hero-content"><h1 class="hero-title">${esc(nf.h1)}</h1><p class="lead">${esc(nf.lead)}</p><div class="cta"><a class="btn btn-primary" href="/">${esc(nf.back)}</a><a class="btn btn-secondary" href="/fr/">${esc(content.fr.notFound.back)}</a></div></div></section>`,
-}).replace('<link rel="canonical"', '<meta name="robots" content="noindex">\n<link rel="canonical"'));
+}).replace('<link rel="canonical"', '<meta name="robots" content="noindex">\n<link rel="canonical"')
+  .replace(`<script>${LANG_SCRIPT}</script>\n`, '') // pas de redirection de langue sur la 404 (sinon boucle)
+  .replace(/<link rel="alternate" hreflang[^>]*>\n?/g, ''));
 
 // sitemap avec les versions de langue
 const today = new Date().toISOString().slice(0, 10);

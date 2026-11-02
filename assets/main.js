@@ -13,3 +13,10 @@
     box.appendChild(p);
   }
 })();
+
+// Retient la langue choisie quand le visiteur clique sur FR / EN.
+document.querySelectorAll('a.lang').forEach(function (a) {
+  a.addEventListener('click', function () {
+    try { localStorage.setItem('lang', a.getAttribute('hreflang')); } catch (e) {}
+  });
+});
