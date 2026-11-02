@@ -8,7 +8,6 @@ export default {
     nav: { home: 'Studio', games: 'Games', bloodyMoon: 'Bloody Moon', vet: 'Horror at the Vet', press: 'Press', legal: 'Legal notice' },
     common: {
       wishlist: 'Wishlist on Steam',
-      kickstarter: 'Support on Kickstarter',
       learnMore: 'Discover the game',
       contact: 'Contact',
       rights: 'All rights reserved.',
@@ -136,7 +135,6 @@ export default {
     nav: { home: 'Studio', games: 'Jeux', bloodyMoon: 'Bloody Moon', vet: 'Horror at the Vet', press: 'Presse', legal: 'Mentions légales' },
     common: {
       wishlist: 'Wishlist sur Steam',
-      kickstarter: 'Soutenir sur Kickstarter',
       learnMore: 'Découvrir le jeu',
       contact: 'Contact',
       rights: 'Tous droits réservés.',

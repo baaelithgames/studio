@@ -103,7 +103,7 @@ ${body}
 <footer class="footer">
   <p class="footer-logo">${esc(cfg.brand.toUpperCase())}</p>
   <p class="footer-links">
-    ${ext(cfg.links.steam, 'Steam')} · ${ext(cfg.links.kickstarter, 'Kickstarter')} · ${ext(cfg.links.x, 'X ' + esc(cfg.links.xHandle))}
+    ${ext(cfg.links.steam, 'Steam')} · ${ext(cfg.links.x, 'X ' + esc(cfg.links.xHandle))}
   </p>
   <p class="footer-mail"><a href="mailto:${esc(cfg.email)}">${esc(cfg.email)}</a></p>
   <p class="footer-copy">© ${new Date().getFullYear()} ${esc(cfg.legalName)}. ${esc(c.common.rights)} · <a href="${href(lang, '/legal/')}">${esc(c.nav.legal)}</a></p>
@@ -116,7 +116,7 @@ ${body}
 
 // ---------- blocs réutilisables ----------
 const facts = (rows, lang) => `<dl class="facts">${rows.map(([k, v]) => `<div><dt>${h(k, lang)}</dt><dd>${h(v, lang)}</dd></div>`).join('')}</dl>`;
-const ctaSteam = (c) => `<div class="cta">${ext(cfg.links.steam, esc(c.common.wishlist), 'btn btn-primary')}${ext(cfg.links.kickstarter, esc(c.common.kickstarter), 'btn btn-secondary')}</div>`;
+const ctaSteam = (c) => `<div class="cta">${ext(cfg.links.steam, esc(c.common.wishlist), 'btn btn-primary')}</div>`;
 
 const org = () => ({
   '@type': 'Organization',
@@ -193,7 +193,6 @@ const render = {
   <p class="sub">${h(p.followSub, lang)}</p>
   <div class="socials">
     ${ext(cfg.links.steam, '<span>Steam</span><small>' + esc(c.common.wishlist) + '</small>', 'social')}
-    ${ext(cfg.links.kickstarter, '<span>Kickstarter</span><small>Bloody Moon</small>', 'social')}
     ${ext(cfg.links.x, '<span>X</span><small>' + esc(cfg.links.xHandle) + '</small>', 'social')}
     <a class="social" href="mailto:${esc(cfg.email)}"><span>${esc(c.common.contact)}</span><small>${esc(cfg.email)}</small></a>
   </div>
@@ -272,7 +271,7 @@ const render = {
       inLanguage: LANGS,
       author: org(),
       publisher: { '@id': cfg.siteUrl + '/#org' },
-      sameAs: [cfg.links.steam, cfg.links.kickstarter],
+      sameAs: [cfg.links.steam],
     };
     return { title: p.title, description: p.description, body, jsonld: [game] };
   },

@@ -12,7 +12,6 @@ export default {
     x: 'https://x.com/BaaelithGames',
     xHandle: '@BaaelithGames',
     steam: 'https://store.steampowered.com/app/4516770/Bloody_Moon__First_Fear/',
-    kickstarter: 'https://www.kickstarter.com/projects/baaelithgames/bloody-moon-first-fear-pure-and-uncompromising-horror',
   },
 
   bloodyMoon: {
