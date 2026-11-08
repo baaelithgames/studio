@@ -16,7 +16,7 @@ export default {
 
     home: {
       title: '{brand} | Indie Horror Game Studio',
-      description: '{brand} is an indie studio building horror games rooted in real French history. First title: Bloody Moon : First Fear, survival horror on PC.',
+      description: '{brand} is an indie studio building horror games rooted in French history and its shadows. First title: Bloody Moon : First Fear, survival horror on PC.',
       eyebrow: 'An Indie Game Studio',
       h1: 'Baaelith Studio',
       tagline: 'Building Dark Universes',
@@ -72,7 +72,7 @@ export default {
         ['The dark sees for you', 'Light wounds your eyes; darkness is clear. Fire belongs to them. Every torch you smother opens a breach of a few seconds. Run through it before it closes.'],
         ['No weapons, no HUD, no reading', 'Nothing on screen, nothing to decipher. Puzzles of shape, order and instinct. What you see and what you hear is all you get.'],
         ['Hunted, never hunting', 'Something lives down there. It sees by firelight and it hears everything. You cannot fight it, you cannot bait it. Silence and darkness, always both.'],
-        ['Carved from real history', 'A real buried sanctuary in Provence. A sacred spring. Nostradamus and Catherine de Medicis. Almost everything in this game is true. That is the problem.'],
+        ['Where history goes quiet', 'A sanctuary buried beneath Provence. A sacred spring. Nostradamus and Catherine de Medicis. Some of it is written in the archives. The rest was never meant to be.'],
       ],
       tags: ['Survival Horror', 'Occult', 'Historical', 'Stealth', 'First Person', 'France'],
       factsLabel: 'Key facts',
@@ -111,7 +111,7 @@ export default {
       bmShortLabel: 'Short description',
       bmShort: 'Pure and uncompromising survival horror beneath the south of France. No weapons, no HUD, no reading: the dark is your only ally.',
       bmLongLabel: 'Long description',
-      bmLong: 'A secret order prepares its ritual under the Blood Moon. Declared unfit and thrown into a mass grave, you survive the fall and must climb back to the surface through the galleries of a forgotten sanctuary beneath Provence, hunted by something that sees by firelight and hears everything. Rooted in real French history, Nostradamus and occult legend.',
+      bmLong: 'A secret order prepares its ritual under the Blood Moon. Declared unfit and thrown into a mass grave, you survive the fall and must climb back to the surface through the galleries of a forgotten sanctuary beneath Provence, hunted by something that sees by firelight and hears everything. Somewhere between French history, Nostradamus and occult legend.',
       vetLabel: 'Horror at the Vet',
       assetsLabel: 'Images',
       assetsNote: 'TODO logo (PNG transparent and SVG), screenshots, key art, trailer link.',
@@ -154,7 +154,7 @@ export default {
 
     home: {
       title: '{brand} | Studio indépendant de jeux d’horreur',
-      description: '{brand}, studio indépendant de jeux d’horreur ancrés dans la vraie histoire de France. Premier titre : Bloody Moon : First Fear, survival horror sur PC.',
+      description: '{brand}, studio indépendant de jeux d’horreur ancrés dans l’histoire de France et ses zones d’ombre. Premier titre : Bloody Moon : First Fear, survival horror sur PC.',
       eyebrow: 'Un studio de jeux indépendant',
       h1: 'Baaelith Studio',
       tagline: 'Construire des univers sombres',
@@ -210,7 +210,7 @@ export default {
         ['Le noir voit pour vous', 'La lumière blesse vos yeux ; le noir est limpide. Le feu leur appartient. Chaque torche étouffée ouvre une brèche de quelques secondes. Engouffrez-vous avant qu’elle se referme.'],
         ['Sans arme, sans HUD, sans lecture', 'Rien à l’écran, rien à déchiffrer. Des énigmes de forme, d’ordre et d’instinct. Ce que vous voyez et ce que vous entendez est tout ce que vous avez.'],
         ['Traquée, jamais traqueuse', 'Quelque chose vit en bas. Il voit à la lueur des torches et il entend tout. Impossible de le combattre, impossible de l’appâter. Le silence et le noir, toujours les deux.'],
-        ['Taillé dans la vraie histoire', 'Un vrai sanctuaire enfoui en Provence. Une source sacrée. Nostradamus et Catherine de Médicis. Presque tout dans ce jeu est vrai. C’est bien le problème.'],
+        ['Là où l’histoire se tait', 'Un sanctuaire enfoui sous la Provence. Une source sacrée. Nostradamus et Catherine de Médicis. Une partie est écrite dans les archives. Le reste ne devait jamais l’être.'],
       ],
       tags: ['Survival horror', 'Occulte', 'Historique', 'Infiltration', 'Vue subjective', 'France'],
       factsLabel: 'En bref',
@@ -249,7 +249,7 @@ export default {
       bmShortLabel: 'Description courte',
       bmShort: 'Un survival horror pur et sans compromis sous le sud de la France. Sans arme, sans HUD, sans lecture : le noir est votre seul allié.',
       bmLongLabel: 'Description longue',
-      bmLong: 'Un ordre secret prépare son rituel pour la Lune de Sang. Déclarée inapte et jetée dans une fosse commune, vous survivez à la chute et devez remonter à la surface à travers les galeries d’un sanctuaire oublié sous la Provence, traquée par quelque chose qui voit à la lueur des torches et entend tout. Ancré dans la vraie histoire de France, Nostradamus et la légende occulte.',
+      bmLong: 'Un ordre secret prépare son rituel pour la Lune de Sang. Déclarée inapte et jetée dans une fosse commune, vous survivez à la chute et devez remonter à la surface à travers les galeries d’un sanctuaire oublié sous la Provence, traquée par quelque chose qui voit à la lueur des torches et entend tout. Quelque part entre l’histoire de France, Nostradamus et la légende occulte.',
       vetLabel: 'Horror at the Vet',
       assetsLabel: 'Images',
       assetsNote: 'TODO logo (PNG transparent et SVG), captures d’écran, visuel principal, lien du trailer.',
