@@ -26,3 +26,9 @@ Connecter ce dépôt à Cloudflare Pages avec :
 2. Dossier de sortie : `dist`
 
 Chaque modification poussée sur la branche de production remet le site à jour automatiquement.
+
+## Règles de contenu
+
+1. Ne jamais affirmer qu'un jeu Baaelith est vrai ou basé sur la vraie histoire (« almost everything is true », « vraie histoire », « based on true events »…). Toujours laisser planer le doute. Seule exception : la mention « œuvre de fiction » des mentions légales.
+2. Horror at the Vet : aucun spoiler, pas de date ni de prix, « coming soon / bientôt ». Pas de lien Steam tant que la page n'existe pas.
+3. Aucune mention de Kickstarter.
